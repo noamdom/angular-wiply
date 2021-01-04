@@ -8,13 +8,15 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { ColorsGridComponent } from './components/colors-grid/colors-grid.component';
 
-import {ColorsService} from './services/colors.service'
+import {ColorsService} from './services/colors.service';
+import { SquareComponent } from './components/square/square.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ColorsGridComponent
+    ColorsGridComponent,
+    SquareComponent
   ],
   imports: [
     BrowserModule,

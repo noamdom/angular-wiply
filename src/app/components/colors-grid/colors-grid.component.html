@@ -1,6 +1,6 @@
 <div *ngIf="colors?.length > 0;else noColors">
     <ul *ngFor="let color of colors" class="collection">
-        <li [ngStyle]="{ 'background-color': color.color }" class="collection-item">{{color.color}}</li>
+        <app-square [color]="color"></app-square>
     </ul>
 </div>
 
