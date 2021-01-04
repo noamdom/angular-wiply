@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ColorsService } from '../../services/colors.service'
+import { Color } from '../../models/color'
 
 @Component({
   selector: 'app-colors-grid',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./colors-grid.component.css']
 })
 export class ColorsGridComponent implements OnInit {
+  colors: Color[];
 
-  constructor() { }
+  constructor(private colorService: ColorsService) {
+
+  }
 
   ngOnInit(): void {
+    this.colorService.getColors().subscribe(colors => {
+      console.log(colors);
+      this.colors = colors;
+    })
   }
 
 }

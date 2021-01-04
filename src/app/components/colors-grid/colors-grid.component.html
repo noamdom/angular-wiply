@@ -1,1 +1,11 @@
-<p>colors-grid works!</p>
+<div *ngIf="colors?.length > 0;else noColors">
+    <ul *ngFor="let color of colors" class="collection">
+        <li [ngStyle]="{ 'background-color': color.color }" class="collection-item">{{color.color}}</li>
+    </ul>
+</div>
+
+
+<ng-template #noColors>
+    <hr>
+    <h5>There is no colors to show</h5>
+</ng-template>

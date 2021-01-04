@@ -8,6 +8,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { ColorsGridComponent } from './components/colors-grid/colors-grid.component';
 
+import {ColorsService} from './services/colors.service'
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,7 @@ import { ColorsGridComponent } from './components/colors-grid/colors-grid.compon
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule
   ],
-  providers: [],
+  providers: [ColorsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
