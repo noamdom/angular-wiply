@@ -9,14 +9,16 @@ import { environment } from '../environments/environment';
 import { ColorsGridComponent } from './components/colors-grid/colors-grid.component';
 
 import {ColorsService} from './services/colors.service';
-import { SquareComponent } from './components/square/square.component'
+import { SquareComponent } from './components/square/square.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ColorsGridComponent,
-    SquareComponent
+    SquareComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
