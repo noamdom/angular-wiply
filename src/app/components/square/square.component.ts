@@ -1,4 +1,4 @@
-import { Component, OnInit , Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Color } from 'src/app/models/Color';
 
 @Component({
@@ -8,10 +8,8 @@ import { Color } from 'src/app/models/Color';
 })
 export class SquareComponent implements OnInit {
   @Input() color: Color;
-  // colorObj : Color;
 
-  constructor() { 
-    // this.colorObj = this.color
+  constructor() {
   }
 
   ngOnInit(): void {
@@ -19,15 +17,12 @@ export class SquareComponent implements OnInit {
 
   changeColor() {
     const randomHex = this.getRandomColor();
-      console.log(randomHex)
-    this.color.color = randomHex;
+    this.color.hex = randomHex;
   }
 
 
-  
-getRandomColor() {
-   return '#' + Math.floor(Math.random()*16777215).toString(16);
-  
-}
+  getRandomColor() {
+    return '#' + Math.floor(Math.random() * 16777215).toString(16);
+  }
 
 }
