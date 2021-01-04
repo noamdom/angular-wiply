@@ -1,12 +1,12 @@
 .square {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border: 1px solid black;
 
 }
 
 .board {
     margin-top: 50px;
-    width: 600px;
+    width: 450px;
     border: 2px solid thistle;
 }
