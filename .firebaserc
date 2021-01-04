@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angular-wiply": {
+      "hosting": {
+        "angular-wiply": [
+          "angular-wiply"
+        ]
+      }
+    }
+  }
+}
