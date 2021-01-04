@@ -8,6 +8,10 @@ import { Color } from '../models/Color'
 @Injectable({
   providedIn: 'root'
 })
+
+/**
+ * This class manages the connnection with the Firebase Firestore
+ */
 export class ColorsService {
   colorsColletction: AngularFirestoreCollection<Color>;
   colors: Observable<Color[]>;
@@ -19,8 +23,7 @@ export class ColorsService {
 
     this.colorsColletction = this.afs.collection('colors');
 
-
-
+    // using snapshot for updates
     this.colors = this.colorsColletction.snapshotChanges().pipe(map(changes =>{
       return changes.map(a => {
         const data = a.payload.doc.data() as Color;
@@ -30,9 +33,16 @@ export class ColorsService {
     }));
   }
 
+  /**
+   * This function return the colors array
+   */
   getColors() {
     return this.colors;
   }
+
+  /**
+   * This function updated the color Doc in DB
+  */
 
   updateHexColor(color : Color) {
     this.colorDoc = this.afs.doc(`colors/${color.id}`);

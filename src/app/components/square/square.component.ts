@@ -15,13 +15,18 @@ export class SquareComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /**
+   * This Function changes the square color and calls to 'colorService' for updating in the DB too.
+   */
   changeColor() {
     const randomHex = this.getRandomColor();
     this.color.hex = randomHex;
     this.colorService.updateHexColor(this.color);
   }
 
-
+  /**
+  * This Function generate a random color using (hex)
+  */
   getRandomColor() {
     return '#' + Math.floor(Math.random() * 16777215).toString(16);
   }
