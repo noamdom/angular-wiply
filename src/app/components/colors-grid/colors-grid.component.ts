@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ColorsService } from '../../services/colors.service'
-import { Color } from '../../models/color'
+import { Color } from '../../models/Color'
 
 @Component({
   selector: 'app-colors-grid',
