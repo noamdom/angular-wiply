@@ -16,7 +16,6 @@ export class ColorsGridComponent implements OnInit {
 
   ngOnInit(): void {
     this.colorService.getColors().subscribe(colors => {
-      console.log(colors);
       this.colors = colors;
     })
   }
