@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Color } from 'src/app/models/Color';
+import {ColorsService } from '../../services/colors.service'
 
 @Component({
   selector: 'app-square',
@@ -9,15 +10,15 @@ import { Color } from 'src/app/models/Color';
 export class SquareComponent implements OnInit {
   @Input() color: Color;
 
-  constructor() {
+  constructor(private colorService : ColorsService) {
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   changeColor() {
     const randomHex = this.getRandomColor();
     this.color.hex = randomHex;
+    this.colorService.updateHexColor(this.color);
   }
 
 
